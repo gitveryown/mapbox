@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Map from './Map';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component() {
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      latitude: 33.7488,
+      longitude: -84.3877,
+      style: 'mapbox://styles/mapbox/streets-v12',
+      name: ''
+    }
+
+  }
+  
+  render() {
+    return (
+      <div className="App">
+        <Map app={this}>/  
+        </Map>
+      </div>
+    );
+  }
+
 }
 
 export default App;
+
+
+
+
